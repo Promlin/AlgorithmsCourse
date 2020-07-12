@@ -21,7 +21,12 @@ namespace AlgorithmsHomework
                     Console.WriteLine(" ");
                     break;
                 case 2:
-                    secondExercise();
+                    Console.WriteLine("Введите число");
+                    int numberToMultiply = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите необходимую степень");
+                    int degree = int.Parse(Console.ReadLine());
+                    float result = secondExercise(numberToMultiply, degree);
+                    Console.WriteLine($"Результат {result}");
                     break;
                 default:
                     Console.WriteLine("Ошибка при вводе. Введите число от 1 до 2");
@@ -43,8 +48,20 @@ namespace AlgorithmsHomework
         //a.без рекурсии;
         //b.рекурсивно;
 
-        public static void secondExercise()
+        public static float secondExercise(int number, int degree)
         {
+            // int startNumber = number; //без использования рекурсии
+            // for (int i = 1; i < degree; i++)
+            // {
+            //    number = number * startNumber;
+            // }
+            //return number;
+
+            if (degree == 0)
+                return 1;
+            if (degree > 0)
+                return secondExercise(number, degree - 1) * number;
+            return 1.0f / (secondExercise(number, -degree));
 
         }
     }
