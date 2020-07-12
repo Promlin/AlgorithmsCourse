@@ -1,0 +1,7 @@
+D:\GeekBrains\prog\Алгоритмы и структуры данных\Homework\AlgorithmsHomework\bin\Debug\AlgorithmsHomework.exe.config
+D:\GeekBrains\prog\Алгоритмы и структуры данных\Homework\AlgorithmsHomework\bin\Debug\AlgorithmsHomework.exe
+D:\GeekBrains\prog\Алгоритмы и структуры данных\Homework\AlgorithmsHomework\bin\Debug\AlgorithmsHomework.pdb
+D:\GeekBrains\prog\Алгоритмы и структуры данных\Homework\AlgorithmsHomework\obj\Debug\AlgorithmsHomework.csprojAssemblyReference.cache
+D:\GeekBrains\prog\Алгоритмы и структуры данных\Homework\AlgorithmsHomework\obj\Debug\AlgorithmsHomework.csproj.CoreCompileInputs.cache
+D:\GeekBrains\prog\Алгоритмы и структуры данных\Homework\AlgorithmsHomework\obj\Debug\AlgorithmsHomework.exe
+D:\GeekBrains\prog\Алгоритмы и структуры данных\Homework\AlgorithmsHomework\obj\Debug\AlgorithmsHomework.pdb
