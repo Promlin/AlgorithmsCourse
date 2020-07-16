@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="HW_1.cs" />
     <Compile Include="HW_2.cs" />
+    <Compile Include="HW_3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
