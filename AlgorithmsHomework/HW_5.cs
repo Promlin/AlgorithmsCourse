@@ -15,6 +15,12 @@ namespace AlgorithmsHomework
                 case 1:
                     firstExercise();
                     break;
+                case 2:
+                    Console.WriteLine("К сожалению, второе задание еще не реализовано");
+                    break;
+                case 3:
+                    thirdExercise();
+                    break;
                 default:
                     Console.WriteLine("Ошибка при вводе. Введите число от 1 до 3");
                     break;
@@ -27,7 +33,7 @@ namespace AlgorithmsHomework
             int number = int.Parse(Console.ReadLine());
             int startNumber = number;
 
-            var stack = new Stack<int>();
+            Stack<int> stack = new Stack<int>();
             while (number > 0)
             {
                 stack.Push(number % 2);
@@ -40,6 +46,75 @@ namespace AlgorithmsHomework
                 Console.Write(i);
 
             Console.WriteLine(" ");
+        }
+
+        //Написать программу, которая определяет, является ли введенная скобочная последовательность правильной
+        public static void thirdExercise()
+        {
+            Stack<string> Sequence = new Stack<string>();
+            Console.WriteLine("Через Enter едите скобочную последовательность для прекращения ввода введите 0");
+            float breakNumber = -1.0f;
+            int mistakes = 0;
+
+            while (breakNumber != 0)
+            {
+                string input = Console.ReadLine();
+
+                int number;
+
+                bool succesIntParse = Int32.TryParse(input, out number);
+                if (succesIntParse && number == 0)
+                {
+                    break;
+                }
+
+                switch (input)
+                {
+                    case "(":
+                        Sequence.Push("(");
+                        break;
+                    case "{":
+                        Sequence.Push("{");
+                        break;
+                    case "[":
+                        Sequence.Push("[");
+                        break;
+                    case ")":
+                        string upValue1 = Sequence.Pop();
+                        if(upValue1 != "(")
+                        {
+                            mistakes++;
+                        }
+                        break;
+                    case "}":
+                        string upValue2 = Sequence.Pop();
+                        if (upValue2 != "{")
+                        {
+                            mistakes++;
+                        }
+                        break;
+                    case "]":
+                        string upValue3 = Sequence.Pop();
+                        if (upValue3 != "[")
+                        {
+                            mistakes++;
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Символ не является скобкой");
+                        break;
+                }
+
+            }
+
+            if(mistakes != 0)
+            {
+                Console.WriteLine("Введенная последовательность ошибочна");
+            }
+            else
+            {
+                Console.WriteLine("Введенная последовательность верна");
+            }
         }
     }
 }
