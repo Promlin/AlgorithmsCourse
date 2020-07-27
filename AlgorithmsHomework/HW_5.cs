@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 
 namespace AlgorithmsHomework
 {
@@ -23,7 +23,23 @@ namespace AlgorithmsHomework
 
         public static void firstExercise()
         {
+            Console.WriteLine("Введите число для перевода в двоичную систему счисления");
+            int number = int.Parse(Console.ReadLine());
+            int startNumber = number;
 
+            var stack = new Stack<int>();
+            while (number > 0)
+            {
+                stack.Push(number % 2);
+                number /= 2;
+            }
+
+            Console.Write($"Число {startNumber} в двоичной системе счисления: ");
+
+            foreach (int i in stack)
+                Console.Write(i);
+
+            Console.WriteLine(" ");
         }
     }
 }
