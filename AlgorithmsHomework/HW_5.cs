@@ -7,7 +7,7 @@ namespace AlgorithmsHomework
     {
         public static void RunExercises()
         {
-            Console.WriteLine("Введите номер упражнения 1 - 3");
+            Console.WriteLine("Введите номер упражнения 1, 3 или 6");
             int exerciseNumber = int.Parse(Console.ReadLine());
 
             switch (exerciseNumber)
@@ -15,14 +15,14 @@ namespace AlgorithmsHomework
                 case 1:
                     firstExercise();
                     break;
-                case 2:
-                    Console.WriteLine("К сожалению, второе задание еще не реализовано");
-                    break;
                 case 3:
                     thirdExercise();
                     break;
+                case 6:
+                    sixthExercise();
+                    break;
                 default:
-                    Console.WriteLine("Ошибка при вводе. Введите число от 1 до 3");
+                    Console.WriteLine("Ошибка при вводе. Введите число 1, 3 или 6");
                     break;
             }
         }
@@ -85,7 +85,7 @@ namespace AlgorithmsHomework
                             break;
                         case ")":
                             string upValue1 = Sequence.Pop();
-                            if (upValue1 != "(" )
+                            if (upValue1 != "(")
                             {
                                 mistakes++;
                             }
@@ -116,7 +116,7 @@ namespace AlgorithmsHomework
 
             }
 
-            if(mistakes != 0)
+            if (mistakes != 0)
             {
                 Console.WriteLine("Введенная последовательность ошибочна");
             }
@@ -124,6 +124,42 @@ namespace AlgorithmsHomework
             {
                 Console.WriteLine("Введенная последовательность верна");
             }
+        }
+
+        //Реализовать очередь
+        public static void sixthExercise()
+        {
+            Queue<string> Queue = new Queue<string>();
+            Console.WriteLine("Через Enter вводите элементы для добавления в очередь. Для прекращения ввода - 0");
+            string input;
+            do
+            {
+                input = Console.ReadLine();
+                if(input != "0")
+                {
+                    Queue.Enqueue(input);
+                }
+            } while (input != "0");
+
+            Console.WriteLine("Хотители вы извлечь первый элемент? Да - 1; Нет - 0");
+            string inputForChoosing = Console.ReadLine();
+            if (inputForChoosing == "1")
+            {
+                string firstItem = Queue.Dequeue();
+                Console.WriteLine($"Первый элемент в очереди {firstItem}");
+            }
+            else if (inputForChoosing != "0")
+            {
+                Console.WriteLine("Введен некорректный ответ");
+            }
+
+            Console.WriteLine("Получившаяся очередь: ");
+            foreach (string item in Queue)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine(" ");
         }
     }
 }
