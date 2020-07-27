@@ -68,41 +68,50 @@ namespace AlgorithmsHomework
                     break;
                 }
 
-                switch (input)
+                int numberOfElements1 = Sequence.Count;
+                if (numberOfElements1 != 0)
                 {
-                    case "(":
-                        Sequence.Push("(");
-                        break;
-                    case "{":
-                        Sequence.Push("{");
-                        break;
-                    case "[":
-                        Sequence.Push("[");
-                        break;
-                    case ")":
-                        string upValue1 = Sequence.Pop();
-                        if(upValue1 != "(")
-                        {
-                            mistakes++;
-                        }
-                        break;
-                    case "}":
-                        string upValue2 = Sequence.Pop();
-                        if (upValue2 != "{")
-                        {
-                            mistakes++;
-                        }
-                        break;
-                    case "]":
-                        string upValue3 = Sequence.Pop();
-                        if (upValue3 != "[")
-                        {
-                            mistakes++;
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("Символ не является скобкой");
-                        break;
+
+                    switch (input)
+                    {
+                        case "(":
+                            Sequence.Push("(");
+                            break;
+                        case "{":
+                            Sequence.Push("{");
+                            break;
+                        case "[":
+                            Sequence.Push("[");
+                            break;
+                        case ")":
+                            string upValue1 = Sequence.Pop();
+                            if (upValue1 != "(" )
+                            {
+                                mistakes++;
+                            }
+                            break;
+                        case "}":
+                            string upValue2 = Sequence.Pop();
+                            if (upValue2 != "{")
+                            {
+                                mistakes++;
+                            }
+                            break;
+                        case "]":
+                            string upValue3 = Sequence.Pop();
+                            if (upValue3 != "[")
+                            {
+                                mistakes++;
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Символ не является скобкой");
+                            break;
+                    }
+                }
+                else
+                {
+                    mistakes++;
                 }
 
             }
