@@ -58,7 +58,6 @@ namespace AlgorithmsHomework
         //б) Реализовать поиск в двоичном дереве поиска;
         public static void secondExercise()
         {
-            //Создадим дерево с корневым элементом 33
             BinaryTree<int> tree = new BinaryTree<int>(33, null);
             //for (int i = 3; i < 9; i =+ 2)
             //{
@@ -67,11 +66,7 @@ namespace AlgorithmsHomework
             tree.add(7);
             tree.add(11);
             tree.add(2);
-            //Распечатаем элементы дерева
             tree.print();
-            //Удалим корень
-            tree.remove(33);
-            tree.remove(17);
         }
     }
 }
