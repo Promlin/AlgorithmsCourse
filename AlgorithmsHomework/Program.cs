@@ -48,6 +48,9 @@ namespace AlgorithmsHomework
                 case 6:
                     HW_6.RunExercises();
                     break;
+                case 7:
+                    HW_7.RunExercises();
+                    break;
                 default:
                     Console.WriteLine("Введено некорректное число");
                     break;
