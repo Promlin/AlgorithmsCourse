@@ -16,7 +16,10 @@ namespace AlgorithmsHomework
                     firstExercise();
                     break;
                 case 2:
-                    secondExercise();
+                    int[] array = gettingArray();
+                    Console.WriteLine("Введите длину массива");
+                    int arrayLength = int.Parse(Console.ReadLine());
+                    secondExercise(array, 0, arrayLength);
                     break;
                 default:
                     Console.WriteLine("Ошибка при вводе. Введите число от 1 до 2");
@@ -50,9 +53,26 @@ namespace AlgorithmsHomework
         }
 
         //Реализовать быструю сортировку.
-        public static void secondExercise()
+        public static void secondExercise(int[] array, int first, int last)
         {
-
+            double p = array[(last - first) / 2 + first];
+            int temp;
+            int i = first;
+            int j = last;
+            while (i <= j)
+            {
+                while (array[i] < p && i <= last) ++i;
+                while (array[j] > p && j >= first) --j;
+                if (i <= j)
+                {
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                    ++i; --j;
+                }
+            }
+            if (j > first) secondExercise(array, first, j);
+            if (i < last) secondExercise(array, i, last);
         }
 
         public static int[] gettingArray()
@@ -81,4 +101,6 @@ namespace AlgorithmsHomework
             Console.WriteLine(" ");
         }
     }
+
+
 }
