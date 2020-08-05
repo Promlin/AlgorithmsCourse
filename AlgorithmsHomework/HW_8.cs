@@ -27,13 +27,58 @@ namespace AlgorithmsHomework
         //Реализовать сортировку подсчетом
         public static void firstExercise()
         {
+            int[] array = gettingArray();
+            int k = 100; //максимальное допустимое число
 
+            var count = new int[k + 1];
+            for (var i = 0; i < array.Length; i++)
+            {
+                count[array[i]]++;
+            }
+
+            var index = 0;
+            for (var i = 0; i < count.Length; i++)
+            {
+                for (var j = 0; j < count[i]; j++)
+                {
+                    array[index] = i;
+                    index++;
+                }
+            }
+
+            printArray(array);
         }
 
         //Реализовать быструю сортировку.
         public static void secondExercise()
         {
 
+        }
+
+        public static int[] gettingArray()
+        {
+            Console.WriteLine("Введите размер массива");
+            int arrayLength = int.Parse(Console.ReadLine());
+            int[] array = new int[arrayLength];
+            Console.WriteLine("Через Enter введите числа");
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write("{0}-е число: ", i + 1);
+                array[i] = int.Parse(Console.ReadLine());
+            }
+
+            return array;
+        }
+
+        public static void printArray(int[] array)
+        {
+            Console.Write("Отсортированный массив: ");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine(" ");
         }
     }
 }
